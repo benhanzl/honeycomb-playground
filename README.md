@@ -25,3 +25,9 @@ npm run start
 
 - Response Code: 201 - Returns the newly created product
 - Response Code: 400 - Request missing a field
+
+`PUT /api/products/:id` - Updates the product (all fields) with the specified id.
+
+- Response Code: 204 - Returns the updated product.
+- Response Code: 400 - Request missing a product field
+- Response Code: 404 - Product does not exist.
