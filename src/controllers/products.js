@@ -24,11 +24,11 @@ productsRouter.get("/:id", async (request, response) => {
 productsRouter.post("/", async (request, response) => {
   const { name, description, imageUrl } = request.body;
 
-  if (name == null || name == "") {
+  if (name == null || name.trim().length === 0) {
     return response.status(400).send(`Argument 'name' is missing or empty.`);
   }
 
-  if (imageUrl == null || imageUrl == "") {
+  if (imageUrl == null || imageUrl.trim().length === 0) {
     return response
       .status(400)
       .send(`Argument 'imageUrl' is missing or empty.`);
@@ -45,11 +45,11 @@ productsRouter.put("/:id", async (request, response) => {
   const { id } = request.params;
   const { name, description, imageUrl } = request.body;
 
-  if (name == null || name == "") {
+  if (name == null || name.trim().length === 0) {
     return response.status(400).send(`Argument 'name' is missing or empty.`);
   }
 
-  if (imageUrl == null || imageUrl == "") {
+  if (imageUrl == null || imageUrl.trim().length === 0) {
     return response
       .status(400)
       .send(`Argument 'imageUrl' is missing or empty.`);
