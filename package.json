@@ -5,9 +5,11 @@
   "author": "Ben Hanzl (benhanzl@honeycomb.io)",
   "main": "src/index.js",
   "scripts": {
+    "dev": "nodemon src/index.js",
     "start": "node src/index.js"
   },
   "devDependencies": {
-    "eslint": "8.45.0"
+    "eslint": "8.45.0",
+    "nodemon": "3.0.1"
   }
 }
