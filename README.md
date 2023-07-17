@@ -28,6 +28,11 @@ npm run start
 
 `PUT /api/products/:id` - Updates the product (all fields) with the specified id.
 
-- Response Code: 204 - Returns the updated product.
+- Response Code: 200 - Returns the updated product.
 - Response Code: 400 - Request missing a product field
+- Response Code: 404 - Product does not exist.
+
+`DELETE /api/products/:id` - Deletes the product with the specified id.
+
+- Response Code: 200 - Returns the deleted product.
 - Response Code: 404 - Product does not exist.

@@ -65,7 +65,25 @@ productsRouter.put("/:id", async (request, response) => {
       },
     });
 
-    response.status(204).json(updatedProduct);
+    response.status(200).json(updatedProduct);
+  } catch (error) {
+    if (error.code === "P2025") {
+      return response.status(404).send("Not Found");
+    }
+
+    throw error;
+  }
+});
+
+productsRouter.delete("/:id", async (request, response) => {
+  const { id } = request.params;
+
+  try {
+    const deletedProduct = await db.product.delete({
+      where: { id },
+    });
+
+    response.status(200).json(deletedProduct);
   } catch (error) {
     if (error.code === "P2025") {
       return response.status(404).send("Not Found");
