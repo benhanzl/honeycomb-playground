@@ -21,4 +21,24 @@ productsRouter.get("/:id", async (request, response) => {
   response.json(product);
 });
 
+productsRouter.post("/", async (request, response) => {
+  const { name, description, imageUrl } = request.body;
+
+  if (name == null || name == "") {
+    return response.status(400).send(`Argument 'name' is missing or empty.`);
+  }
+
+  if (imageUrl == null || imageUrl == "") {
+    return response
+      .status(400)
+      .send(`Argument 'imageUrl' is missing or empty.`);
+  }
+
+  const newProduct = await db.product.create({
+    data: { name, description, imageUrl },
+  });
+
+  response.status(201).json(newProduct);
+});
+
 module.exports = productsRouter;

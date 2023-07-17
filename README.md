@@ -20,3 +20,8 @@ npm run start
 
 - Response Code: 200 - Individual product.
 - Response Code: 404 - Product does not exist.
+
+`POST /api/products` - Creates a new product.
+
+- Response Code: 201 - Returns the newly created product
+- Response Code: 400 - Request missing a field
