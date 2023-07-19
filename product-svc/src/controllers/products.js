@@ -1,5 +1,7 @@
-const productsRouter = require("express").Router();
-const db = require("../utils/db");
+import { Router } from "express";
+import db from "../utils/db.js";
+
+const productsRouter = new Router();
 
 productsRouter.get("/", async (_, response) => {
   const products = await db.product.findMany();
@@ -93,4 +95,4 @@ productsRouter.delete("/:id", async (request, response) => {
   }
 });
 
-module.exports = productsRouter;
+export default productsRouter;

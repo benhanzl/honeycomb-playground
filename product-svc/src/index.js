@@ -1,8 +1,8 @@
-require("dotenv").config();
+import "dotenv/config";
 
-const app = require("./app");
-const logger = require("./utils/logger");
-const productsRouter = require("./controllers/products");
+import app from "./app.js";
+import logger from "./utils/logger.js";
+import productsRouter from "./controllers/products.js";
 
 app.use("/api/products", productsRouter);
 
